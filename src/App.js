@@ -3,22 +3,38 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav className="navbar">
+          <h1>Math Magicians</h1>
+          <ul className="navbar-list">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/calculator">Calculator</Link>
+            </li>
+            <li>
+              <Link to="/quote">Quote</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/calculator">
+            <Calculator />
+          </Route>
+          <Route path="/quote">
+            <Quote />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
