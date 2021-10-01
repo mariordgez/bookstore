@@ -1,4 +1,4 @@
-# Bookstore
+# Bookstore.
 
 I will create an MVP version of it that allows you to:
 
