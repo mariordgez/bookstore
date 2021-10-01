@@ -3,10 +3,8 @@ import '../App.css';
 
 const BookForm = () => (
   <form>
-    <label>
-      Add a new Book
-      <input type="text" name="name" />
-    </label>
+    <h2>Add a new Book</h2>
+    <input type="text" name="name" />
     <input type="submit" value="Submit" />
   </form>
 );
