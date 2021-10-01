@@ -25,15 +25,15 @@ function App() {
             <Categories />
           </Route>
           <Route path="/">
-            <Home />
+            <Book />
           </Route>
         </Switch>
       </div>
     </Router>
   );
 }
-function Home() {
-  return <h2>Home</h2>;
+function Book() {
+  return <h2>Book</h2>;
 }
 
 function Categories() {
