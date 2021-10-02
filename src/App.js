@@ -8,9 +8,9 @@ import Home from './components/home';
 function App() {
   return (
     <Router>
-      <div>
-        <nav className="navbar">
-          <h1>Bookstore</h1>
+      <div className="panel-bg">
+        <nav className="navbar panel-bg-navbar">
+          <h1 className="Bookstore-CMS">Bookstore</h1>
           <ul className="navbar-list">
             <li>
               <Link to="/">Books</Link>
