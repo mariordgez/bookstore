@@ -1,11 +1,11 @@
 import React from 'react';
 import '../App.css';
 import BookForm from './bookForm';
-import DisplayBook from './displayBook';
+import Books from './displayBook';
 
 const Home = () => (
   <div>
-    <DisplayBook />
+    <Books />
     <BookForm />
   </div>
 );

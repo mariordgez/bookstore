@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { removeBook } from '../redux/books/books';
 
-const Display = ({ title, author, id }) => {
+const Book = ({ title, author, id }) => {
   const dispatch = useDispatch();
   const removeBookFromStore = (e) => {
     e.preventDefault();
@@ -25,15 +25,15 @@ const Display = ({ title, author, id }) => {
   );
 };
 
-Display.propTypes = {
+Book.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   author: PropTypes.string,
   id: PropTypes.number,
 };
 
-Display.defaultProps = {
+Book.defaultProps = {
   title: '1',
   author: 'white',
   id: 1,
 };
-export default Display;
+export default Book;
