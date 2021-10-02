@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import '../App.css';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { createBook as create } from '../redux/books/books';
 
 let booksID = 1;
 
@@ -21,7 +21,7 @@ const BookForm = () => {
       author,
     };
     // dispatch an action and pass it the newBook object (your action's payload)
-    dispatch(addBook(newBook));
+    dispatch(create(newBook));
     booksID += 1;
     setTitle('');
     setAuthor('');
@@ -30,20 +30,8 @@ const BookForm = () => {
   return (
     <form onSubmit={submitBookToStore}>
       <h2>Add a new Book</h2>
-      <input
-        type="text"
-        name="title"
-        placeholder="Add a title.."
-        onChange={updateTitle}
-        value={title}
-      />
-      <input
-        type="text"
-        name="author"
-        placeholder="Add an author.."
-        onChange={updateAuthor}
-        value={author}
-      />
+      <input type="text" name="title" placeholder="Add a title.." onChange={updateTitle} value={title} />
+      <input type="text" name="author" placeholder="Add an author.." onChange={updateAuthor} value={author} />
       <input type="submit" value="Submit" />
     </form>
   );

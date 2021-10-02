@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { removeBook } from '../redux/books/books';
 
-const Book = ({ title, author, id }) => {
+const Book = ({ title, category, id }) => {
   const dispatch = useDispatch();
   const removeBookFromStore = (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ const Book = ({ title, author, id }) => {
       <p>
         {title}
         <span> by </span>
-        {author}
+        {category}
       </p>
       <button onClick={removeBookFromStore} type="submit" aria-label="Decrement value">
         remove
@@ -27,13 +27,13 @@ const Book = ({ title, author, id }) => {
 
 Book.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  author: PropTypes.string,
+  category: PropTypes.string,
   id: PropTypes.number,
 };
 
 Book.defaultProps = {
   title: '1',
-  author: 'white',
+  category: 'white',
   id: 1,
 };
 export default Book;
