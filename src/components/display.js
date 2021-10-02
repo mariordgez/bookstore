@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types'; // eslint-disable-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
 import { removeBook } from '../redux/books/books';
 
 const Display = ({ title, author, id }) => {

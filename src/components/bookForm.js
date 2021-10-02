@@ -1,8 +1,6 @@
 import { React, useState } from 'react';
 import '../App.css';
-// import useDispatch hook
 import { useDispatch } from 'react-redux';
-// import your Action Creators
 import { addBook } from '../redux/books/books';
 
 let booksID = 1;
@@ -16,6 +14,7 @@ const BookForm = () => {
   const submitBookToStore = (e) => {
     const id = booksID;
     e.preventDefault();
+
     const newBook = {
       id,
       title,

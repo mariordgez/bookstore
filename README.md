@@ -62,3 +62,15 @@ Give a ⭐️ if you like this project!!!
 ## 📝 License
 
 [MIT](/LICENSE)
+
+const postToApi = fetch(
+'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/',
+{
+method: 'POST',
+headers: {
+'Content-type': 'application/json; charset=UTF-8',
+},
+body: JSON.stringify(),
+} // eslint-disable-line comma-dangle
+).then((res) => res.text());
+id: wib10ybZy4rKQLyBThID
