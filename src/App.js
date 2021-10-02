@@ -1,21 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
+import {
+  BrowserRouter as Router, Switch, Route, Link,
+} from 'react-router-dom';
 import './App.css';
+import Home from './components/home';
 
 function App() {
   return (
     <Router>
       <div>
         <nav className="navbar">
-          <h1>Math Magicians</h1>
+          <h1>Bookstore</h1>
           <ul className="navbar-list">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Books</Link>
             </li>
             <li>
-              <Link to="/calculator">Calculator</Link>
-            </li>
-            <li>
-              <Link to="/quote">Quote</Link>
+              <Link to="/categories">Categories</Link>
             </li>
           </ul>
         </nav>
@@ -23,11 +24,8 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/calculator">
-            <Calculator />
-          </Route>
-          <Route path="/quote">
-            <Quote />
+          <Route path="/categories">
+            <Categories />
           </Route>
           <Route path="/">
             <Home />
@@ -36,6 +34,10 @@ function App() {
       </div>
     </Router>
   );
+}
+
+function Categories() {
+  return <h2>Coming Soon!</h2>;
 }
 
 export default App;
