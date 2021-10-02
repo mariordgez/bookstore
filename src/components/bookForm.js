@@ -1,37 +1,45 @@
 import { React, useState } from 'react';
 import '../App.css';
 import { useDispatch } from 'react-redux';
-import { createBook as create } from '../redux/books/books';
-
-let booksID = 1;
+import { createBook, getBooks } from '../redux/books/books';
 
 const BookForm = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
   const updateTitle = (e) => setTitle(e.target.value);
-  const updateAuthor = (e) => setAuthor(e.target.value);
+  const updateCategory = (e) => setCategory(e.target.value);
   const submitBookToStore = (e) => {
-    const id = booksID;
     e.preventDefault();
 
     const newBook = {
-      id,
       title,
-      author,
+      category,
     };
     // dispatch an action and pass it the newBook object (your action's payload)
-    dispatch(create(newBook));
-    booksID += 1;
+    dispatch(createBook(newBook));
+    dispatch(getBooks());
     setTitle('');
-    setAuthor('');
+    setCategory('');
   };
 
   return (
     <form onSubmit={submitBookToStore}>
       <h2>Add a new Book</h2>
-      <input type="text" name="title" placeholder="Add a title.." onChange={updateTitle} value={title} />
-      <input type="text" name="author" placeholder="Add an author.." onChange={updateAuthor} value={author} />
+      <input
+        type="text"
+        name="title"
+        placeholder="Add a title.."
+        onChange={updateTitle}
+        value={title}
+      />
+      <input
+        type="text"
+        name="author"
+        placeholder="Add an author.."
+        onChange={updateCategory}
+        value={category}
+      />
       <input type="submit" value="Submit" />
     </form>
   );
