@@ -19,15 +19,30 @@ const Book = ({ title, category, id }) => {
         <span className="School-of">{category}</span>
         <br />
         <span className="Title Text-Style-6">{title}</span>
+        <br />
+        <span className="Suzanne-Collins">Suzanne Collins</span>
+        <div className="Flex">
+          <span className="Comments">Comments</span>
+          <div className="Line-2" />
+          <span className="Comments">Remove</span>
+          <div className="Line-2" />
+          <span className="Comments">Edit</span>
+        </div>
       </div>
-      <button
-        className="Remove"
-        onClick={removeBookFromStore}
-        type="submit"
-        aria-label="Decrement value"
-      >
-        Remove
-      </button>
+      <div>
+        <span className="School-of">CURRENT CHAPTER</span>
+        <br />
+        <span className="Comments black">Introduction</span>
+        <br />
+        <button
+          className="Remove"
+          onClick={removeBookFromStore}
+          type="submit"
+          aria-label="Decrement value"
+        >
+          REMOVE
+        </button>
+      </div>
     </div>
   );
 };
