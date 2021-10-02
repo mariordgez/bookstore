@@ -1,22 +1,16 @@
 import React from 'react';
 import '../App.css';
 import { useSelector } from 'react-redux';
+import Display from './display';
 
 const DisplayBook = () => {
   const books = useSelector((state) => state.booksReducer);
+  const result = [];
   Object.keys(books).forEach((key) => {
-    console.log(books[key].author);
     const { title, author } = books[key];
-    return (
-      <div>
-        <p>{title}</p>
-        <p>{author}</p>
-        <button type="submit" aria-label="Decrement value">
-          remove
-        </button>
-      </div>
-    );
+    result.push(<Display title={title} author={author} />);
   });
+  return result;
 };
 
 export default DisplayBook;

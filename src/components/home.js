@@ -9,5 +9,4 @@ const Home = () => (
     <BookForm />
   </div>
 );
-
 export default Home;
