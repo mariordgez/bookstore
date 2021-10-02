@@ -2,14 +2,16 @@ import React from 'react';
 import '../App.css';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook } from '../redux/books/books';
+import { removeBook, getBooks } from '../redux/books/books';
 
 const Book = ({ title, category, id }) => {
   const dispatch = useDispatch();
+
   const removeBookFromStore = (e) => {
     e.preventDefault();
 
     dispatch(removeBook(id));
+    dispatch(getBooks());
   };
   return (
     <div>
@@ -28,12 +30,12 @@ const Book = ({ title, category, id }) => {
 Book.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   category: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 Book.defaultProps = {
   title: '1',
   category: 'white',
-  id: 1,
+  id: '1',
 };
 export default Book;

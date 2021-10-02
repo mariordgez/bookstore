@@ -10,7 +10,7 @@ export const getBooks = () => async (dispatch) => {
   dispatch({ type: GET_BOOKS, state });
 };
 
-export const createBook = (book) => async () => {
+export const createBook = (book) => async (dispatch) => {
   await fetch(url, {
     method: 'POST',
     body: new URLSearchParams({
@@ -19,13 +19,16 @@ export const createBook = (book) => async () => {
       category: book.category,
     }),
   });
+  dispatch(getBooks());
 };
 
-export const removeBook = (bookId) => async () => {
-  await fetch(`${url}${bookId}`, {
+export const removeBook = (bookId) => async (dispatch) => {
+  const newurl = [url, '/', bookId];
+
+  await fetch(newurl.join(''), {
     method: 'DELETE',
   });
-  getBooks();
+  dispatch(getBooks());
 };
 
 const booksReducer = (state = initialState, action) => {
