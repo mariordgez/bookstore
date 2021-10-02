@@ -9,19 +9,9 @@ const BookForm = () => {
   const [category, setCategory] = useState('');
   const updateTitle = (e) => setTitle(e.target.value);
   const updateCategory = (e) => setCategory(e.target.value);
-  const postToApi = fetch(
-    'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/',
-    {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-      body: JSON.stringify(),
-    } // eslint-disable-line comma-dangle
-  ).then((res) => res.text());
+
   const submitBookToStore = (e) => {
     e.preventDefault();
-    console.log(postToApi);
     const newBook = {
       title,
       category,
