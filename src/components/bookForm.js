@@ -26,26 +26,27 @@ const BookForm = () => {
   return (
     <form className="Lesson-Panel-Form" onSubmit={submitBookToStore}>
       <h2 className="Title-form">Add a new Book</h2>
-      <br />
-      <input
-        className="Lesson-Panel-input"
-        type="text"
-        name="title"
-        placeholder="Add a title.."
-        onChange={updateTitle}
-        value={title}
-      />
-      <br />
-      <input
-        className="Lesson-Panel-input"
-        type="text"
-        name="author"
-        placeholder="Add a category.."
-        onChange={updateCategory}
-        value={category}
-      />
-      <br />
-      <input className="Remove" type="submit" value="Submit" />
+      <div className="Flex">
+        <input
+          className="Lesson-Panel-input"
+          type="text"
+          name="title"
+          placeholder="Book Title"
+          onChange={updateTitle}
+          value={title}
+        />
+
+        <input
+          className="Lesson-Panel-input Small"
+          type="text"
+          name="author"
+          placeholder="Category"
+          onChange={updateCategory}
+          value={category}
+        />
+
+        <input className="Remove" type="submit" value="ADD BOOK" />
+      </div>
     </form>
   );
 };
