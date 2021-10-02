@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
 const GET_BOOKS = 'bookStore/books/GET_BOOKS';
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/wib10ybZy4rKQLyBThID/books';
-const initialState = [];
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GQMmj9TcWecaON9Qj8WH/books';
+const initialState = {};
 
 export const getBooks = () => async (dispatch) => {
   const res = await fetch(url);
@@ -10,7 +10,7 @@ export const getBooks = () => async (dispatch) => {
   dispatch({ type: GET_BOOKS, state });
 };
 
-export const createBook = (book) => async (dispatch) => {
+export const createBook = (book) => async () => {
   await fetch(url, {
     method: 'POST',
     body: new URLSearchParams({
@@ -19,9 +19,6 @@ export const createBook = (book) => async (dispatch) => {
       category: book.category,
     }),
   });
-  const res = await fetch(url);
-  const state = await res.json();
-  dispatch({ type: GET_BOOKS, state });
 };
 
 export const removeBook = (bookId) => async () => {
