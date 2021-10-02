@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
       return [...state, action.payload];
 
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== id); // eslint-disable-line no-undef
+      return state.filter((bk) => bk.id !== action.payload); // eslint-disable-line no-undef
 
     default:
       return state;

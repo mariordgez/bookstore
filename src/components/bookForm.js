@@ -14,9 +14,10 @@ const BookForm = () => {
   const updateTitle = (e) => setTitle(e.target.value);
   const updateAuthor = (e) => setAuthor(e.target.value);
   const submitBookToStore = (e) => {
+    const id = booksID;
     e.preventDefault();
     const newBook = {
-      booksID,
+      id,
       title,
       author,
     };
