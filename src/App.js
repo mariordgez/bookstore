@@ -12,10 +12,10 @@ function App() {
         <nav className="navbar panel-bg-navbar">
           <h1 className="Bookstore-CMS">Bookstore</h1>
           <ul className="navbar-list">
-            <li>
+            <li className="BOOKS">
               <Link to="/">Books</Link>
             </li>
-            <li>
+            <li className="CATEGORIES">
               <Link to="/categories">Categories</Link>
             </li>
           </ul>
