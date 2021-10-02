@@ -14,14 +14,19 @@ const Book = ({ title, category, id }) => {
     dispatch(getBooks());
   };
   return (
-    <div>
-      <p>
-        {title}
-        <span> by </span>
-        {category}
-      </p>
-      <button onClick={removeBookFromStore} type="submit" aria-label="Decrement value">
-        remove
+    <div className="Lesson-Panel">
+      <div className="Flex-1">
+        <span className="School-of">{category}</span>
+        <br />
+        <span className="Title Text-Style-6">{title}</span>
+      </div>
+      <button
+        className="Remove"
+        onClick={removeBookFromStore}
+        type="submit"
+        aria-label="Decrement value"
+      >
+        Remove
       </button>
     </div>
   );

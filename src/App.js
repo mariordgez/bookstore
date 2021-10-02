@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div className="panel-bg">
         <nav className="navbar panel-bg-navbar">
-          <h1 className="Bookstore-CMS">Bookstore</h1>
+          <h1 className="Bookstore-CMS">Bookstore CMS</h1>
           <ul className="navbar-list">
             <li className="BOOKS">
               <Link to="/">Books</Link>
