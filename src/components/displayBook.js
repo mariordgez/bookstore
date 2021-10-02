@@ -5,12 +5,9 @@ import Book from './book';
 
 const Books = () => {
   const books = useSelector((state) => state.booksReducer);
-  const result = [];
-  Object.keys(books).forEach((key) => {
-    const { title, author, id } = books[key];
-    result.push(<Book title={title} author={author} id={id} />);
-  });
-  return result;
+  return books.map((book) => (
+    <Book key={book.id} title={book.title} author={book.author} id={book.id} />
+  ));
 };
 
 export default Books;
