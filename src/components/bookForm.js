@@ -24,23 +24,28 @@ const BookForm = () => {
   };
 
   return (
-    <form onSubmit={submitBookToStore}>
-      <h2>Add a new Book</h2>
+    <form className="Lesson-Panel-Form" onSubmit={submitBookToStore}>
+      <h2 className="Title-form">Add a new Book</h2>
+      <br />
       <input
+        className="Lesson-Panel-input"
         type="text"
         name="title"
         placeholder="Add a title.."
         onChange={updateTitle}
         value={title}
       />
+      <br />
       <input
+        className="Lesson-Panel-input"
         type="text"
         name="author"
-        placeholder="Add an author.."
+        placeholder="Add a category.."
         onChange={updateCategory}
         value={category}
       />
-      <input type="submit" value="Submit" />
+      <br />
+      <input className="Remove" type="submit" value="Submit" />
     </form>
   );
 };

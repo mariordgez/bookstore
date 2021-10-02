@@ -14,6 +14,7 @@ const Home = () => {
   return (
     <div>
       <Books />
+      <div className="Line" />
       <BookForm />
     </div>
   );
